@@ -1,0 +1,259 @@
+ n = 6
+
+5 1 6 2 4 3
+
+i = 0, innerLoop -> j = 0 to n-i-1
+
+0 < (6 - 0 - 1)-> 5 :
+     5 > 1 => True:
+     SWAP
+
+1 5 6 2 4 3
+
+1 < 5 :
+    5 > 6 => False:
+    NOTHING HAPPENS
+
+1 5 6 2 4 3
+
+2 < 5:
+    6 > 2 => True:
+    SWAP
+
+1 5 2 6 4 3
+
+3 < 5:
+    6 > 4 => True:
+    SWAP
+
+1 5 2 4 6 3
+
+4 < 5:
+    6 > 3 => True:
+    SWAP
+1 5 2 4 3 6
+
+#########1 PASS COMPLETED
+Now ELEMENTS ARE 1 5 2 4 3 6
+
+i = 1, innerLoop -> j = 0 to n - i - 1
+
+0 < (6 - 1 - 1)-> 4:
+    1 > 5 => False:
+    NOTHING HAPPENS
+
+1 5 2 4 3 6
+
+1 < 4:
+    5 > 2 => True:
+    SWAP
+
+1 2 5 4 3 6
+
+2 < 4:
+    5 > 4 => True:
+     SWAP
+
+1 2 4 5 3 6
+
+3 < 4:
+    5 > 3 => True:
+    SWAP
+
+1 2 4 3 5 6
+
+#########2 PASS COMPLETED
+NOW ELEMENTS ARE 1 2 4 3 5 6
+
+i = 2, innerLoop -> j = 0 to n - i - 1
+
+0 < (6 - 2 - 1)-> 3:
+    1 > 2 => False:
+    NOTHING HAPPENS
+
+1 2 4 3 5 6
+
+1 < 3:
+    2 > 4 => False:
+    NOTHING HAPPENS
+
+2 < 3:
+    4 > 3 => True:
+    SWAP
+
+1 2 3 4 5 6
+
+########3 PASS COMPLETED
+
+*** FINISHED SORTING BUT OUTER LOOP STILL EXECUTES TILL 'n' TIMES ***
+
+i = 3, innerLoop -> j = 0 to n - i - 1
+
+...
+=>False:
+    NOTHING HAPPENS
+
+...
+=>False:
+    NOTHING HAPPENS
+
+
+=========================================================
+NOT EFFICIENT. LET US OPTIMIZE Bubble Sort Algorithm
+We can Introduce 'Flag' to monitor whether elements are getting swapped inside the inner 'for' loop
+
+5 1 6 2 4 3
+
+i = 0, innerLoop j = 0 to n - i - 1:
+
+0 < (6 - 0 - 1)->5:
+    flag = 0
+    
+    5 > 1 => True:
+    SWAP
+    flag = 1
+
+1 5 6 2 4 3
+
+1 < 5:
+    flag = 0
+
+    5 > 6 => False:
+    NOTHING HAPPENS
+
+1 5 6 2 4 3
+
+2 < 5:
+    flag = 0
+
+    6 > 2 =>True:
+    SWAP
+    flag = 1
+
+1 5 2 6 4 3
+
+3 < 5:
+    flag = 0
+
+    6 > 4 =>True:
+    SWAP
+    flag = 1
+
+1 5 2 4 6 3
+
+4 < 5:
+    flag = 0
+
+    6 > 3 =>True:
+    SWAP
+    flag = 1
+
+
+if flag == 0:
+    break
+
+1 5 2 4 3 6
+
+####### 1 PASS CoMPLEted
+Now elements are 1 5 2 4 3 6
+
+i = 1, innerLoop j = 0 to n - i - 1
+
+0 < (6 - 1 - 1)->4:
+    flag = 0
+
+    1 > 5 => False:
+    NOTHING HAPPENS
+
+1 < 4:
+    flag = 0
+
+    5 > 2 => True:
+    SWAP
+    flag = 1
+
+1 2 5 4 3 6
+
+2 < 4:
+    flag = 0
+
+    5 > 4 =>True:
+    SWAP
+    flag = 1
+
+1 2 4 5 3 6
+
+3 < 4:
+    flag = 0
+
+    5 > 3 => True:
+    SWAP
+    flag = 1
+
+if flag == 0:
+    break
+
+1 2 4 3 5 6
+
+########## 2 PASS Completed
+
+Now elements are 1 2 4 3 5 6
+
+i = 2, innerLoop j = 0 to n - i - 1
+
+0 < (6-2-1)->3:
+    flag = 0
+
+    1 > 2 =>False:
+    NOTHING HAPPENS
+
+1 < 3:
+    flag = 0
+
+    2 > 4 =>False:
+    NOTHING HAPPENS
+
+2 < 3:
+    flag = 0
+
+    4 > 3 =>True:
+    SWAP
+    flag = 1
+
+if flag == 0:
+    break
+
+1 2 3 4 5 6
+########3 PASS Completed
+
+
+i = 3, innerLoop j = 0 to n - i - 1
+
+0 < (6 - 3 - 1)-> 2:
+    flag = 0
+
+    1 > 2 =>False:
+    NOTHING HAPPENS
+
+if flag == 0:
+    break
+
+*****************
+
+In Bubble sort, (n-1) comparisons will be done in 1st Pass. (n-2) in 2nd, (n-3) in 3rd pass and so on...
+
+so, no of comparisions will be 
+(n-1) + (n-2) + (n-3) + ... + 3 + 2 + 1
+
+sum = n(n-1)/2
+    = n*n - n/2
+
+Time complexity is O(n^2)
+Space Complexity is O(1). As only 'temp' takes additional space
+
+Best Case will be O(n), if list is already sorted
+
+WorstCase Big-O-> O(n^2)
+BestCase Big-omega-> O(n)
+Average Time Complexity Big-Theta-> O(n^2)
+Space Complexity: O(1)

@@ -1,0 +1,204 @@
+WHAT YOU NEED TO KNOW:
+
+Data Structures:
+1. Hash Tables
+2. Linked Lists
+3. Stacks
+4. Queues
+5. Trees
+6. Tries
+7. Graphs
+8. Vectors
+9. Heaps
+
+Algorithms:
+1. Quick Sort
+2. Merge Sort
+3. Binary Search
+4. Breadth-First Search
+5. Depth-First Search
+
+Concepts:
+1. Big-O Time
+2. Big-O Space
+3. Recursion & Memoization
+4. Probability
+5. Bit Manipulation
+
+=======================================================================
+Quora Person's lecture in CS50 on Interview Prep, Resume, What to know.
+
+Types of Interviews:
+- Algorithms
+- Coding
+- Practical
+- Systems Design
+- Culture
+
+Common classes of algorithms problems:
+1. Strings [Reverse, Index, Sub string..]
+2. Recursion
+3. Dynamic Programming
+4. Graphs, Trees
+5. Math
+
+Tools for solving problems:
+1. Arrays, linked lists
+2. Hash tables
+3. Built-in string methods
+4. Memoization
+5. Shortest path algorithms (e.g., BFS, A*)
+
+
+Preparing for interview
+- Short term
+- Long term
+
+- SHORT TERM:
+1] Practice the basics (In your language of choice)
+
+
+How do you:
+- Define a class?
+- Insert/Remove things from a linked list?
+- BFS/DFS a tree?
+- Initialize/print/sort an array?
+- Use a hash table?
+
+* If you have these down cold, you can worry less about them and focus on problem solving
+
+* As you do practice problems (From your friends, from the internet, from a book, from past interviews), look for common things
+
+2] Practice variety of problems
+    - Recursion / Dynamic Programming / Complexity
+    - Trees / Graphs
+
+3] Data Structures:
+    - Hash tables, Graphs composed of nodes, Linked lists, Tree.
+    * Not just how they work, but when to use them and which ones apply to
+     similar situations
+
+4] Know your strengths and weaknesses:
+    - If you're not good at graph problems, practice those.
+    - If you're not good at dynamic programming, practice that.
+
+Practice real interviews:
+- Don't just look at a problem for a few minutes, then check the answer key
+- Create as real a setting as possible--practice with friends!
+- Don't look up solutions, and try to actually write up a full solution (while talking out loud)
+- Time yourself (30 minutes per problem)
+
+- After each practice round, assess your own performance
+  * What went well?
+  * What could you improve?
+  * Where did you get stuck?
+
+- Ask friends for feedback
+- (Real interviewers rarely give you feedback, don't ask for it)
+
+
+- LONG TERM
+- Spend more time programming
+- Take a Data Structures and Algorithms course
+- Do more interviews
+
+Why Algorithms:
+- Knowledge of data structures & algorithms is a common denominator for CS students
+- An imperfect proxy to evalute problem-solving skills
+
+What to expect:
+- At least 1 coding problem focusing on Data structers and Algorithms
+- You will need to:
+    * Explain your approach and its correctness
+    * Analyze time and space complexity of your solution
+    * Write clean code in an editor or on a whiteboard
+      - Usually in the language of your choice
+    * Test your code and iterate on it
+
+
+When Given a problem statement:
+- Always tell your interviewer if you've seen the problem before!
+- Make sure you understand the problem
+   - Don't make any assumptions.
+     * When in doubt, ask if you are allowed to assume something
+   - Ask clarifying questions
+   - Verify that you agree on a desired output for a test input
+
+Brainstorming Approches:
+- Your Process is more important than your output
+- Talk through multiple approaches:
+  - Start with the first/easiest solution you see
+- Draw diagrams or run through Test Cases
+- At a high level, explain your chosen approach and reasoning
+    - Convince your interviewer this will work (Efficiently)
+
+Writing Code:
+- Your process is more important than your output
+- Communicate your progress clearly and out loud
+- Code quality matters
+   - Should be understandable, not just correct
+   - Break up your logic into helper functions where appropriate
+   - Don't name your variables foo, bar and baz
+   - If at a whiteboard: talk to your interviewer explicitly about this
+
+Coding on a Computer:
+- Add debug statements as you write code. Print statements as you write code will give you what's working and what's not.
+
+
+Final tips:
+- It's better to over-communicate than under-communicate
+- Listen carefully to your interviewer for hints/clues
+- Solving problems well and writing good code are necessary but not sufficient for being a successful interviewee
+
+Takeaways:
+- Pick + learn an Interviewing language
+- Fill out your toolbox so you have the basics down cold
+- Do practice problems / Interviews (with your friends!)
+- Practice talking out loud (it will feel weird)
+- Keep interviewing
+
+
+====================================
+
+Ravindrababu Ravula GATE - Things to learn.
+
+1] Data Structures
+- Stacks
+- Queues
+- Linked Lists
+- Trees
+- Hashing
+- Heaps
+- Graphs
+
+ADVANCED Data Structures:
+- Binomial Heap
+- Fibonacci Series
+- Skip List
+- Red-black Trees
+- Tries
+- Ternary Search
+- Segment Trees
+- Splay Trees
+
+2] Algorithms
+- Analysis
+- Sorting and Searching Techniques
+- Divide and Conquer
+- Greedy
+- Backtracking
+- Dynamic Programming
+- Complexity Classes
+
+3] Problem Solving Using Data Structures & Algorithms
+- Arrays
+- Linked Lists
+- Stacks
+- Queues
+- Trees
+- Heaps
+- Strings
+- Divide and Conquer
+- Backtracking
+- Bit Manipulation
+- Mathematical Algorithms
