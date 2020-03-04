@@ -1,0 +1,210 @@
+MIT 6.046J Introduction to Algorithms (SMA 5503), Fall 2005
+-----------------------------------------------------------
+Analysis of Algorithms:
+
+Before even designing an Algorithm, you have to know how to ANALYZE the algorithm so that you can
+pick one for your design for better performance.
+
+Theoritcal Study of Computer program 'performance' & 'Resource' usage.
+
+What's more important than 'Performance'?
+1. Correctness
+2. Simplicity
+3. Maintainability
+4. Robustness of Software (Does software break?)
+5. Features
+6. Modularity (Modifying piece of Code without changing a lot of other code)
+7. Security
+8. Scalability/performance
+9. UI
+
+Why Study Algorithms & Performance?
+
+Sometimes PERFORMANCE is co-related with UI.
+Sometimes UI doesn't make sense when Performance is bad.
+Performance measures the Line between "Feasible" & "Infeasible".
+
+Algorithms give a language for talking about "Programming Behaviour" (Clean way of thinking of things)
+
+---------------------------------------------------------
+
+Let's start with a OLDEST Problem. "SORTING"
+
+INPUT: sequence <a1, a2 ... an> of numbers as Input
+OUTPUT: Permutations(Re-arranging) of those numbers <a1, a2.... an> Such that, a1 <= a2 .... <= an
+
+INSERTION SORT (A, n) // Sorts A[1....n]
+
+Psuedocode:
+----------
+for j <-- 2 to n
+	do key <-- A[j]
+		i <-- j-1
+		while i > 0 and A[i] > key
+			do A[i+1]<--A[i]
+				i <-- i-1
+		A[i+1] <-- Key
+
+Ex:
+[8 2 4 9 3 6]
+==>
+2 8 4 9 3 6
+2 4 8 9 3 6
+2 4 8 9 3 6
+2 3 4 8 9 6
+2 3 4 6 8 9
+
+Running Time:
+------------
+Running time of this algorithm depends on INPUT itself.
+
+Ex: 1. INPUT is already SORTED (BEST CASE)
+    2. ELEMENTS are reverse sorted (WORST CASE)
+
+Depends on Input size (6 elements  then 6*10^9)
+If we have more input elements, it takes lot longer.
+
+So typically we handle that by:
+	- Parameterize things in INPUT SIZE. We talk Time as a FUNCTION for the INPUT SIZE we are sorting. So we can look at the behaviour of that.
+	- Want a UPPER BOUNDS on Running time. (Time is no more than certain amount. A guarantee to the user)
+
+WORST CASE:
+There are Different Kind of Analysis people do. We do WORST CASE (Usually).
+We define T(n) = Maximum Time on any INPUT of size 'n'
+
+AVERAGE CASE:
+Sometime we talk about AVERAGE CASE (Sometimes)
+T(n) = Expected Time over all inputs of size 'n'. (need assumption of statistical distribution)
+
+BEST CASE(BOGUS!):
+Slow algorithms that works fast on some input doesn't do much for you.
+
+
+What is WORST-CASE Time for INSERTION SORT?
+------------------------------------------
+O
+|_ ==> It depends on your computer!!
+\	- Relative speed (On same machine)
+	- Absolute speed (on Diff machines)
+
+BIG IDEA! ---> Asymptotic Analysis (Ability to master and take messy complicated situation and reduce to be able to do some
+Mathematics)
+
+1. Ignore Machine Dependant Constants
+2. Look at GROWTH of Running Time --> T(n) as n --> ∞
+
+** Asymptotic Notation **
+-------------------------
+[Theta-Notation]: Drop low order terms & IGNORE leading Constants.
+Ex: 3n^3 + 90n^2 - 5n + 6046 = Theta(n^3)
+
+As 'n' --> ∞ , my Theta(n^2) Algorithm beats Theta(n^3) Algorithm even if you Run Theta(n^2) Algorithm on SLOW Computer 
+& Theta(n^3) Algorithm on FAST computer. That's the beauty of Asymptotic analysis. As you see the Growth of INPUT SIZE,
+the asymptotic generally wont change.
+
+Insertion Sort Analysis:
+-----------------------
+
+WORST CASE: INPUT Reverse Sorted. (Big to small)
+
+We write down the Running time, by looking at the Nesting of loops. (Pseduo code for reference)
+
+T(n) = Summation(2 to n) Theta(j) = Theta(n^2) ---> (Arithmetic Series 1+2+3+.....+n)
+
+* Is INSERTION Sort FAST?
+Answer: For small INPUT 'n', Not at all for Large 'n'
+
+=================================================================================
+
+MERGE SORT: A[1 ... n]
+
+Three Steps:
+1. If n = 1, DONE.
+2. Recursively Sort A[1 ... [n/2]] and A[[n/2]+1...n]
+3. Take those two halves and Merge them.
+
+Key Sub Routine Merge:
+---------------------
+First Half		Second Half
+20			12
+13			11
+7			9
+2			1
+
+To merge these, first we have to get sorted list out of both of them.
+So first observe where is Smallest element of any Two Lists that are already SORTED. It's in 1 of 2 places. HEAD of first list or HEAD of second list.
+
+From above HEAD of two lists:
+
+2			1 --> Smaller. So take it out.
+
+Now, HEAD is like this:
+
+2-->Smaller		9
+
+7-->Smaller		9
+
+13			9--> Smaller
+
+13			11--> Smaller
+
+13			12--> Smaller
+
+==> 1, 2, 7, 9, 11, 12,
+
+Time = Theta(n) on 'n' total elements.
+
+For 1st step: it's Theta(1) Constant --> Abuse
+For 2nd step: it's 2T(n/2) --> Sloppy
+For 3rd step: it's Theta(n)
+
+
+---------------------------------------------------
+
+Recurrence:
+
+T(n) = Theta(1), if n = 1 (Usually omits constants)
+	2T(n/2)+Theta(n), if n > 1
+
+Recursion Tree Technique: T(n)= 2T(n/2) + cn, Constant 'c' > 0
+
+T(n) =		cn				cn
+	       /   \		==> 	       /   \
+	    T(n/2)   T(n/2)		     cn/2  cn/2	---	= ..... 
+					     / \      /     \	      /	
+					T(n/4) T(n/4) T(n/4) T(n/4)   ....
+
+Here it keeps going on & on, till Theta(1) till LEAVES.
+
+So what is the Height(h) of the TREE?
+
+h = logn ---> All the halfs we do till we reach Theta(1)
+
+So how many LEAVES are in this TREE?
+
+#LEAVES = n 
+
+Initial we are at level 1, then 2, then 4, then 8...
+
+2^0, 2^1, 2^2, 2^3....2^n
+
+so, if we are going from Top of Tree to Down, 'h' levels, then we have 2^h while h='logn' ==> 2^logn ===> 'n' --> No. of leaves.
+
+Let's findout How much work we have to do by adding up everything in the TREE.
+We shall add Level by level.
+
+1st --> cn
+2nd --> cn
+3rd --> cn
+...
+
+All leaves --> Theta(n)
+
+Total : cn*height + theta(n)
+	cn*logn + theta(n)
+===> Theta(nlogn) is asymtotically faster than, theta(n^2)
+
+So, MERGE SORT on Large INPUT Size  will beat INSERTION Sort.
+
+Therefore, If Running Insertion Sort on a Faster computer and Merge Sort on a slower PC, MERGE Sort would win. By having least size of input Greater Than 30 Elements.
+i.e, If elements are < 30, Insertion Sort would be quick. Else MERGE SORT.
