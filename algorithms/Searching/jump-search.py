@@ -33,7 +33,7 @@ def jumpsearch(arr, target, n):
 arr = [0, 1, 1, 2, 3, 5, 8, 13, 21,
     34, 55, 89, 144, 233, 377, 610]
 
-target = 55
+target = 0
 n = len(arr)
 
 # Find the index of 'target' element.
