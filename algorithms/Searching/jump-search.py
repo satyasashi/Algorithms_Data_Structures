@@ -8,6 +8,10 @@ def jumpsearch(arr, target, n):
 
     # finding block where it is present.
     prev = 0
+    # int(min(step, n)-1)
+    # Making sure that, # of steps we Jump not be overwhelming.
+    # We shouldn't cross the Target element. So MIN(step, n) gives Just that.
+    # -1 part explains, we start Index at 0. So, it makes sense.
     while arr[int(min(step, n)-1)] < target:
         prev = step
         step += math.sqrt(n)
@@ -29,9 +33,9 @@ def jumpsearch(arr, target, n):
 
     return -1
 
+
 # Driver code
-arr = [0, 1, 1, 2, 3, 5, 8, 13, 21,
-    34, 55, 89, 144, 233, 377, 610]
+arr = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
 
 target = 0
 n = len(arr)

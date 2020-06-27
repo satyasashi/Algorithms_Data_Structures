@@ -4,7 +4,7 @@
 # then ignore all elements towards left. Now starting element will be next
 # element from element compared just now.
 
-def binary_search(arr, target):
+def binary_search_rec(arr, target):
     for i in range(0, len(arr)-1):
         half = len(arr)//2
         print(half, i)
@@ -22,8 +22,26 @@ def binary_search(arr, target):
             return binary_search(arr, target)
     return -1
 
-arr = [7,8,9,12,89,98,104,893]
-target = 9
 
-res = binary_search(arr, target)
+def binary_search_iter(arr, l, r, target):
+    while l <= r:
+        mid = (l+r)//2 # find mid value
+
+        if arr[mid] == target:
+            return mid
+
+        elif arr[mid] < target:
+            l = mid+1
+
+        else:
+            r = mid-1
+
+    return False
+
+
+arr = [7, 8, 9, 12, 89, 98, 104, 893]
+target = 893
+
+res = binary_search_iter(arr, 0, len(arr)-1, target)
+# res = binary_search_rec(arr, target)
 print(res)
