@@ -12,7 +12,7 @@ F(n) = F(n-1) + F(n-2) + F(n-3) ... + F(n-m)
 F(0) = 0
 F(1) = 1
 
-ex: 0 1 1 2 3 5 8 13 21....
+ex: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811,
 https://www.geeksforgeeks.org/fibonacci-search/
 """
 
@@ -40,6 +40,7 @@ def fibonnaci_search(arr, target, size):
         # if Target > value at Index 'i' (FibM2), cut
         # the subarray array from offset to i
         if arr[i] < target:
+            # move one down
             print("arr[{}]--> {} < {}".format(i, arr[i], target))
             fibM = fibM1
             fibM1 = fibM2
@@ -48,6 +49,7 @@ def fibonnaci_search(arr, target, size):
             print("******************************")
             print("FibM2, FibM1, FibM : {}, {}, {}".format(fibM2, fibM1, fibM))
         elif arr[i] > target:
+            # move two down
             fibM = fibM2
             fibM1 = fibM1 - fibM2
             fibM2 = fibM - fibM1
@@ -58,7 +60,7 @@ def fibonnaci_search(arr, target, size):
             return i
 
 
-    if(fibM1 and arr[offset+1] == x):
+    if(fibM1 and arr[offset+1] == target):
         print("Found element")
         return offset+1
 
@@ -66,7 +68,7 @@ def fibonnaci_search(arr, target, size):
 
 
 arr = [10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100]
-target = 22
+target = 90
 size = len(arr)
 
 res = fibonnaci_search(arr, target, size)
