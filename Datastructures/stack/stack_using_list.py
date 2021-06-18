@@ -12,9 +12,11 @@ def create_stack():
     stack = []
     return stack
 
+
 # Stack is empty when size is 0
 def is_empty(stack):
-    return len(stack) == 0 # Returns True or False
+    return len(stack) == 0  # Returns True or False
+
 
 # Push an item into the stack at the end/top of stack
 def push(stack, item):
@@ -28,6 +30,7 @@ def pop(stack):
         return str(-maxsize-1)
 
     return stack.pop()
+
 
 stack = create_stack()
 push(stack, str(10))

@@ -33,7 +33,6 @@ class LinkedList:
         # Move the Head to point to New Node
         self.head = new_node
 
-
     # Function to know the size of Linked List
     def linkedListSize(self):
         count = 0
@@ -42,7 +41,7 @@ class LinkedList:
         while current is not None:
             count += 1
             current = current.next
-        
+
         return count
 
 
@@ -50,7 +49,7 @@ if __name__ == "__main__":
 
     # Start with the empty list
     llist = LinkedList()
-    
+
     llist.push(1)
     llist.push(13)
     llist.push(4)

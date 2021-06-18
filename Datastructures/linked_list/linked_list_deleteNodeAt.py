@@ -5,22 +5,22 @@
 
     llist.head        second              third     similarly
          |                |                  |          |
-         |                |                  |          | till 
+         |                |                  |          | till
     +----+------+     +----+------+     +----+------+   +---+------+
     | 1  | None |     | 2  | None |     |  3 | None |...| 5 | None |
     +----+------+     +----+------+     +----+------+   +---+------+
 '''
 
-''' 
-    Now next of first Node refers to second.  So they 
+'''
+    Now next of first Node refers to second.  So they
     both are linked. Similarly till end Link them up.
-  
-    llist.head        second              third 
-         |                |                  | 
-         |                |                  | 
-    +----+------+     +----+------+     +----+------+ 
-    | 1  |  o-------->| 2  | o--------> |  3 | o--------> 
-    +----+------+     +----+------+     +----+------+  
+
+    llist.head        second              third
+         |                |                  |
+         |                |                  |
+    +----+------+     +----+------+     +----+------+
+    | 1  |  o-------->| 2  | o--------> |  3 | o-------->
+    +----+------+     +----+------+     +----+------+
 '''
 
 
@@ -36,7 +36,6 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-
     def printList(self):
         # Print all the nodes starting from Head.
         present_ele = self.head
@@ -48,7 +47,7 @@ class LinkedList:
     # Delete a Node from LinkedList at given Position
     # Pass a Index Value
     def delete_node_at(self, position):
-        if self.head == None:
+        if self.head is None:
             return
 
         present_ele = self.head
@@ -70,11 +69,11 @@ class LinkedList:
             if present_ele is None:
                 break
 
-        if present_ele == None:
+        if present_ele is None:
             print("present_ele is None")
             return
 
-        if present_ele.next == None:
+        if present_ele.next is None:
             print("present_ele.next is None")
             return
 
@@ -83,7 +82,6 @@ class LinkedList:
         present_ele.next = None
 
         present_ele.next = next_
-
 
     # Delete all the nodes from the list
     def delete_all_nodes(self):
@@ -102,7 +100,7 @@ class LinkedList:
             '''We take next node and only delete (Present_ele.data) not whole (present_ele)
             itself, because we still need its reference for next iteration and to make
             Next Node as Present Node'''
-            
+
             next_ = present_ele.next
 
             del present_ele.data

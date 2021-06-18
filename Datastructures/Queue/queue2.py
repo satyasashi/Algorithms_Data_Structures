@@ -34,9 +34,9 @@ class Queue():
 		del self.queue[self.front]
 		return
 
+
 if __name__ == "__main__":
 	myqueue = Queue(5)
-
 	# enqueuing
 	myqueue.enqueue(1)
 	myqueue.enqueue(2)

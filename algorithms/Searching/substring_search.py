@@ -33,4 +33,4 @@ def contains(text, pattern, text_ind, pattern_ind):
 
 
 if __name__ == "__main__":
-    print(contains("llo Mr Robot", "Mr Robot", 0, 0))
+    print(contains("Hello MrRobot", "MrRobot", 0, 0))

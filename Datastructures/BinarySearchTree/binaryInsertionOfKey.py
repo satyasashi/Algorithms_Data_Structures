@@ -3,9 +3,9 @@
 # as a child of the LEAF node.
 """
     100                         100
-    /   \       Insert 40       /   \
+    /   \\       Insert 40       /   \
 20      500     ---->       20      500
-/   \                       /   \
+/   \\                       /   \
 10  30                    10    30
                                   \
                                   40

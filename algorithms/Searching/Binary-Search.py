@@ -26,6 +26,7 @@ def binary_search_rec(arr, target):
 def binary_search_iter(arr, l, r, target):
     while l <= r:
         mid = (l+r)//2 # find mid value
+        print(mid, end="\n")
 
         if arr[mid] == target:
             return mid
@@ -39,8 +40,8 @@ def binary_search_iter(arr, l, r, target):
     return False
 
 
-arr = [7, 8, 9, 12, 89, 98, 104, 893]
-target = 893
+arr = [0, 0, 0, 12, 14, 17, 25]
+target = 10
 
 res = binary_search_iter(arr, 0, len(arr)-1, target)
 # res = binary_search_rec(arr, target)
