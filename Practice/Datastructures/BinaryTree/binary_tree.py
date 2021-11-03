@@ -24,5 +24,5 @@ if __name__ == '__main__':
     print(node.right.value)
     print(node.left.left.value)
     print(node.left.right.value)
-    print(node.right.left.value)
-    print(node.right.right.value)
+    # print(node.right.left.value)
+    # print(node.right.right.value)

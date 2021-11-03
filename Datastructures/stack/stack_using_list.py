@@ -32,10 +32,21 @@ def pop(stack):
     return stack.pop()
 
 
+def peek(stack):
+    if (is_empty(stack)):
+        return str(-maxsize - 1)  # return minus infinite
+    return stack[len(stack) - 1]
+
+
 stack = create_stack()
 push(stack, str(10))
 push(stack, str(20))
 push(stack, str(30))
 push(stack, str(40))
 
+print(pop(stack)+" popped from stack ")
+print(pop(stack)+" popped from stack ")
+print(pop(stack)+" popped from stack ")
+print(pop(stack)+" popped from stack ")
+print(pop(stack)+" popped from stack ")
 print(pop(stack)+" popped from stack ")

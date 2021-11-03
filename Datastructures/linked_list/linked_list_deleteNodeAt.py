@@ -4,8 +4,8 @@
     second and third
 
     llist.head        second              third     similarly
-         |                |                  |          |
-         |                |                  |          | till
+        |                |                  |          |
+        |                |                  |          | till
     +----+------+     +----+------+     +----+------+   +---+------+
     | 1  | None |     | 2  | None |     |  3 | None |...| 5 | None |
     +----+------+     +----+------+     +----+------+   +---+------+
@@ -16,8 +16,8 @@
     both are linked. Similarly till end Link them up.
 
     llist.head        second              third
-         |                |                  |
-         |                |                  |
+        |                |                  |
+        |                |                  |
     +----+------+     +----+------+     +----+------+
     | 1  |  o-------->| 2  | o--------> |  3 | o-------->
     +----+------+     +----+------+     +----+------+
@@ -26,6 +26,7 @@
 
 class Node:
     """Node holds Data and Pointer to next Node"""
+
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -33,6 +34,7 @@ class Node:
 
 class LinkedList:
     """LinkedList has a Head"""
+
     def __init__(self):
         self.head = None
 
@@ -58,7 +60,7 @@ class LinkedList:
             present_ele = None
             return
 
-        for i in range(position -1):
+        for i in range(position - 1):
             '''We have told what to do if Position == 0
             So we make 0th iteration to points to 1st Node
             for 1th iteration, It points to 2nd Node and so on.'''
@@ -108,8 +110,7 @@ class LinkedList:
             present_ele = next_
 
 
-
-if __name__=="__main__":
+if __name__ == "__main__":
     '''Make a LinkedList object and assign Node object to it'''
     llist = LinkedList()
     llist.head = Node(1)

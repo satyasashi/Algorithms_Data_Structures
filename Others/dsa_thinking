@@ -1,0 +1,33 @@
+Linked list operations:
+1. Push at beginning of list
+2. Append at end of the list
+3. Insert at certain key
+4. Delete at certain key
+
+
+1. Push at beginning:
+Edge cases:
+	- Empty linked list
+	- Not empty linked list (making new node as head)
+
+2. Append at the end of the linked list
+Edge cases:
+	- Linked list is empty
+	- List is not empty, traverse till last node and add it
+
+3. Inserting at certain key
+Edge cases:
+	- HEAD can be the key itself (best case)
+	- KEY can be in the middle of the list (avg case)
+	- KEY can be last node of the list ( worst case )
+	- KEY is not present in the list (worst case)
+
+
+4. Deleting at certain key:
+Edge cases:
+	- HEAD can be the key itself (best case)
+	- KEY can be in the middle of the list (avg case)
+	- KEY can be last node of the list ( worst case )
+	- KEY is not present in the list (worst case)
+	
+

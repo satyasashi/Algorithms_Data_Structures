@@ -1,10 +1,11 @@
 """
 Doubly Linked List is similar to Single Linked List, but has ability to go Forward in the list
 and also Backward in the list.
-                                      +----------------------------------------+        +----------------------------------------+
+                                    +----------------------------------------+        +----------------------------------------+
 Which means, a NODE has 3 elements. - | Previous_Pointer | Data | Next_Pointer | -----> | Previous_Pointer | Data | Next_Pointer |
-                                      +----------------------------------------+ <----- +----------------------------------------+
+                                    +----------------------------------------+ <----- +----------------------------------------+
 """
+
 
 class Node:
     def __init__(self, data):
@@ -17,9 +18,9 @@ class DoublyLinkedList:
     def __init__(self):
         self.head = None
 
-
     # Add Node at the end of DLL
-    # Traverse throught the DLL and add at the end.
+    # Traverse through the DLL and add at the end.
+
     def append(self, new_data):
         new_node = Node(new_data)
 
@@ -33,7 +34,7 @@ class DoublyLinkedList:
             self.head = new_node
             return
 
-        # Go till last from head. Use loop.
+        # Go till last from head. Use a loop.
         last = self.head
 
         # Traverse through the DLL
@@ -44,7 +45,6 @@ class DoublyLinkedList:
         new_node.prev = last
         return
 
-
     def printList(self):
         present_ele = self.head
 
@@ -53,6 +53,7 @@ class DoublyLinkedList:
             present_ele = present_ele.next
 
         return
+
 
 if __name__ == "__main__":
     llist = DoublyLinkedList()
@@ -78,4 +79,3 @@ if __name__ == "__main__":
     print("Added.")
 
     llist.printList()
-

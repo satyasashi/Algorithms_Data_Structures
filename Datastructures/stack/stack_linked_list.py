@@ -8,10 +8,8 @@ class Stack:
     def __init__(self):
         self.head = None
 
-
     def is_empty(self):
         return True if self.head is None else False
-
 
     def push(self, data):
         new_node = StackNode(data)
@@ -20,11 +18,10 @@ class Stack:
 
         new_node.next = self.head
         print(new_node.data, new_node.next)
-        
+
         self.head = new_node
         print("self.head ", self.head)
         print("{} pushed to stack".format(data))
-
 
     def pop(self):
         if (self.is_empty()):
