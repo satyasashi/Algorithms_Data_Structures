@@ -37,6 +37,32 @@ class Queue():
         # peek first element in the queue
         print(self.queue[self.front])
         return
+    
+    def isEmpty(self):
+        # If length of Queue is 0,
+        # Then it's empty
+        if len(self.queue) == 0:
+            print("Queue is Empty")
+        else:
+            print("Not empty")
+        return
+    
+    def isFull(self):
+        if len(self.queue) == self.size:
+            print("Queue Overflow.")
+            return
+        else:
+            print("keep going...")
+    
+    def front_peek(self):
+        # if we want to see which element is going to get
+        # dequeued next, we can take a quick peek.
+        if self.isEmpty():
+            # if Queue is empty and peeking to see element,
+            # then tell the user the Queue is empty.
+            print("Queue is empty.")
+
+        return self.queue[self.front]
 
 
 if __name__ == "__main__":
