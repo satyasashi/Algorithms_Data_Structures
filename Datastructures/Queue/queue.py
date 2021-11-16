@@ -63,6 +63,14 @@ class Queue():
             print("Queue is empty.")
 
         return self.queue[self.front]
+    
+    def rear_peek(self):
+        """If we want to see what's the element 
+        in the Queue that recently got added, then we can take a Rear peek."""
+        if self.isEmpty():
+            print("Queue is empty.")
+        
+        return self.queue[self.rear]
 
 
 if __name__ == "__main__":

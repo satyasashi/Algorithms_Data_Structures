@@ -13,10 +13,10 @@ def binary_search(root, key):
     if root is None or root.val == key:
         return root
 
-    # Key is greater than Root's KEY
+    # Key is greater than Root's KEY, recur right subtree.
     if root.val < key:
         return binary_search(root.right, key)
 
-    # Key is smaller than Root's Key
+    # Key is smaller than Root's KEY, recur left subtree
     if root.val > key:
         return binary_search(root.left, key)
