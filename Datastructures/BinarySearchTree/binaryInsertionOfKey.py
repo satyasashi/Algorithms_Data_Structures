@@ -42,8 +42,9 @@ class BinarySearchTree:
                 else:
                     self.insert(root.left, node)
 
-    def inorder(self, root):
+    def inorder(self, root) -> None:
         if root:
+            print(root.left is None)
             self.inorder(root.left)
             print(root.val)
             self.inorder(root.right)
@@ -64,7 +65,7 @@ if __name__ == "__main__":
     #    /     \ 
     #   30     70
     #   / \    / \
-    #  20 40  60 80
+    #  20 40  60 90
 
     bst = BinarySearchTree()
 
