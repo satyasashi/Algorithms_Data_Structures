@@ -1,5 +1,4 @@
 class Node:
- 
     # Constructor to create a new node
     def __init__(self, key):
         self.key = key
@@ -64,7 +63,7 @@ def deleteNode(root, key):
     if key < root.key:
         root.left = deleteNode(root.left, key)
  
-    # If the kye to be delete
+    # If the key to be delete
     # is greater than the root's key
     # then it lies in right subtree
     elif(key > root.key):
